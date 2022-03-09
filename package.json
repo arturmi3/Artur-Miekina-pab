@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/arturmi3/Artur-Miekina-pab#readme",
   "dependencies": {
+    "@types/node": "^17.0.21",
     "express": "^4.17.3",
     "timescript": "^1.0.0"
   },
