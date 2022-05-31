@@ -1,0 +1,133 @@
+post
+localhost:3000/restauracja
+{
+    "nazwa": "Restauracja API",
+    "adres": "adres, miejscowosc nr",
+    "telefon": "123123123",
+    "nip": "123456789",
+    "email": "biuro@restauracja.pl",
+    "www": "www.restauracja.pl"
+}
+
+put
+localhost:3000/restauracja
+{
+    "telefon": "222333444",
+    "www": "www.restauracja.com.pl"
+}
+
+post
+localhost:3000/stolik
+{
+    "nazwa": "Stolik1",
+    "iloscOsob": 4,
+    "status": "Wolny"
+}
+
+post
+localhost:3000/stolik
+{
+    "nazwa": "Stolik2",
+    "iloscOsob": 5,
+    "status": "Wolny"
+}
+
+put
+localhost:3000/stolik
+{
+    "_id": "6293736ec5b597672b49048e",
+    "nazwa": "Stolik2.",
+    "iloscOsob": 6,
+    "status": "Wolny"
+}
+
+post
+localhost:3000/pracownik
+{
+    "imie": "Piotr",
+    "nazwisko": "Kowalski",
+    "stanowisko": "Kasjer"
+}
+
+get
+localhost:3000/stoliki
+
+
+post
+localhost:3000/produkt
+{
+    "nazwa": "produkt 6",
+    "cena": 18.99,
+    "ilosc": 3,
+    "jednostkaMiary": "kg"
+}
+
+put
+localhost:3000/produkt
+{
+    "_id": "6295015425a19ac6a7a39f7c",
+    "nazwa": "produkt 6",
+    "cena": 29.99,
+    "ilosc": 3,
+    "jednostkaMiary": "szt"
+}
+
+get
+localhost:3000/produkty?page=0&limit=2
+
+
+post
+localhost:3000/danie
+{
+    "nazwa": "Jajecznica",
+    "cena": 15.99,
+    "kategoria": "Śniadanie"
+}
+{
+    "nazwa": "Paróweczki",
+    "cena": 11,
+    "kategoria": "Śniadanie"
+}
+{
+    "nazwa": "Owsianka",
+    "cena": 9.5,
+    "kategoria": "Śniadanie"
+}
+
+post
+localhost:3000/zamowienie
+{ 
+    "pracownikId" : "6296797cde308b79976f37b2", 
+    "pozycje" : [ "629679dbde308b79976f37b4", "62967a23de308b79976f37b6" ], 
+    "status" : "Złożone", 
+    "stolikId" : "629678b1de308b79976f37af", 
+    "kwota" : 55 
+}
+
+post
+localhost:3000/zamowienie
+{ 
+    "pracownikId" : "6296797cde308b79976f37b2", 
+    "pozycje" : [ "62967a11de308b79976f37b5", "62967a23de308b79976f37b6" ], 
+    "status" : "Złożone", 
+    "stolikId" : "629678b1de308b79976f37af", 
+    "kwota" : 40 
+}
+
+
+
+
+RAPORTY
+--------------------------------------------
+// wyszukiwarka wolnego stolika
+get
+localhost:3000/wolnystolik?data=2022-05-29T20:00&osoby=3
+
+// raport obłożenia stolików (raport zamówień wg stolików)
+get 
+localhost:3000/zamowieniawgstolikow
+
+// raport zamówienie per kelner
+get
+localhost:3000/zamowieniaperkelner
+
